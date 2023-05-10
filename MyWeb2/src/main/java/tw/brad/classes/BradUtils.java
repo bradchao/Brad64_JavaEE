@@ -13,7 +13,7 @@ public class BradUtils {
 			new BufferedReader(new FileReader(viewFile));
 		String line; StringBuffer sb = new StringBuffer();
 		while ( (line = reader.readLine()) != null) {
-			sb.append(line);
+			sb.append(line + "\n");
 		}
 		reader.close();
 		return sb.toString();
