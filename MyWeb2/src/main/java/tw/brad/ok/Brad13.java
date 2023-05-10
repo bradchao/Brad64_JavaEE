@@ -17,6 +17,9 @@ public class Brad13 extends HttpServlet {
 		RequestDispatcher dispatcher = 
 			request.getRequestDispatcher("Brad14");
 		
+		request.setAttribute("x", 123);
+		request.setAttribute("y", 456);
+		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.print("<h1>Brad Big Company</h1>");

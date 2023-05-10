@@ -12,8 +12,11 @@ public class Brad14 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String name = request.getParameter("name");
+		Integer x = (Integer)request.getAttribute("x");
+		Integer y = (Integer)request.getAttribute("y");
 		
-		response.getWriter().append("Hello, " + name);
+		response.getWriter().append("Hello, " + name + "<br />")
+		.append("x = " + x + ";" + " y = " + y);
 	
 	}
 }
