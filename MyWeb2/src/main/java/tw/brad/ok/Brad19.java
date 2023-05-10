@@ -25,11 +25,11 @@ public class Brad19 extends HttpServlet {
 		
 		try {
 			String content = BradUtils.loadView(view);
-			out.print(String.format(content, x, y, result));
+			out.print(String.format(content, view, x, y, result));
 		}catch(Exception e1) {
 			try {
 				String content = BradUtils.loadView("view1");
-				out.print(String.format(content, x, y, result));
+				out.print(String.format(content, view, x, y, result));
 			}catch(Exception e2) {
 				
 			}
