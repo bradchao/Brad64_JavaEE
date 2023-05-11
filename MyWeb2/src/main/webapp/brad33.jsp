@@ -33,7 +33,19 @@
 				for (int j=START; j<(START+COLS); j++){
 					int newj = j + k * COLS;
 					
-					out.print("<td bgcolor='pink'>");
+					if (k % 2 == 0){
+						if (j % 2 == 0){
+							out.print("<td bgcolor='pink'>");
+						}else{
+							out.print("<td bgcolor='yellow'>");
+						}
+					}else{
+						if (j % 2 != 0){
+							out.print("<td bgcolor='pink'>");
+						}else{
+							out.print("<td bgcolor='yellow'>");
+						}
+					}
 					
 					for (int i=1; i<=9; i++){
 						int r = newj * i;
