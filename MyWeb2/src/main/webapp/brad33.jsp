@@ -19,10 +19,10 @@
 	</head>
 	<body>
 		<h1>The BEST 9 x 9 Table</h1>
-		<form>
-			<input type="number" name="start" value="<%= START %>"> :
-			<input type="number" name="rows" value="<%= ROWS %>"> x
-			<input type="number" name="cols" value="<%= COLS %>"> 
+		<form onsubmit="return checkData();">
+			<input type="number" id="start" name="start" value="<%= START %>"> :
+			<input type="number" id="rows" name="rows" value="<%= ROWS %>"> x
+			<input type="number" id="cols" name="cols" value="<%= COLS %>"> 
 			<input type="submit" value="Show" /> 
 		</form>
 		<hr />
@@ -59,3 +59,17 @@
 		</table>
 	</body>
 </html>
+<script type="text/javascript">
+	function checkData(){
+		let start = document.getElementById('start').value;
+		let rows = document.getElementById('rows').value;
+		let cols = document.getElementById('cols').value;
+		
+		if (start > 0 && rows > 0 && cols > 0){
+			return true
+		}else{
+			alert("xxxxxx");
+			return false;
+		}
+	}
+</script>
