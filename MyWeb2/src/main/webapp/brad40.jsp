@@ -2,10 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	Bike b1 = new Bike();
-	b1.upSpeed(); b1.upSpeed();b1.upSpeed();b1.upSpeed();
-	request.setAttribute("b1", b1);
-%>
+	Bike b1 = (Bike)request.getAttribute("b1");
+	b1.upSpeed();
+%>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,7 +12,7 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
-		I am brad39.jsp<br />
-		<jsp:forward page="brad40.jsp"></jsp:forward>
+		I am 40<hr />
+		<%= b1 %>
 	</body>
 </html>

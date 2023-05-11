@@ -21,6 +21,8 @@
 			<jsp:param value="200" name="y"/>
 		</jsp:include>
 		<hr />
+		<jsp:include page="brad41.jsp"></jsp:include>
+		<hr />
 		OK	
 	</body>
 </html>
