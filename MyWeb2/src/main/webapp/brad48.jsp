@@ -21,7 +21,7 @@
 		IP: ${pageContext.request.remoteAddr }<br />
 		Locale: <%= request.getLocale() %><br />
 		Locale: ${pageContext.request.locale }<br />
-		Language: <%= request.getLocale().getDisplayLanguage() %>
+		Language: <%= request.getLocale().getDisplayLanguage() %><br />
 		Language: ${pageContext.request.locale.displayLanguage }
 		
 		
