@@ -19,6 +19,7 @@
 		Hello, <jsp:getProperty property="account" name="member"/>
 		<hr />
 		<jsp:getProperty property="email" name="member"/>
+		
 			
 	</body>
 </html>

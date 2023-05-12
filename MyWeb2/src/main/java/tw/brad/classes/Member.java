@@ -28,5 +28,9 @@ public class Member {
 		this.email = email;
 	}
 	
+	@Override
+	public String toString() {
+		return account + ":" + email;
+	}
 	
 }
