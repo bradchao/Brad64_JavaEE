@@ -14,6 +14,15 @@
 		4: ${paramValues.hobby[3] }<br />
 		5: ${paramValues.hobby[4] }<br />
 		6: ${paramValues.hobby[5] }<br />
+		<hr />
+		Method: <%= request.getMethod() %><br />
+		Method: ${pageContext.request.method }<br />
+		IP: <%= request.getRemoteAddr() %><br />
+		IP: ${pageContext.request.remoteAddr }<br />
+		Locale: <%= request.getLocale() %><br />
+		Locale: ${pageContext.request.locale }<br />
+		Language: <%= request.getLocale().getDisplayLanguage() %>
+		Language: ${pageContext.request.locale.displayLanguage }
 		
 		
 		

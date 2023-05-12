@@ -7,7 +7,7 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
-		<form action="brad48.jsp">
+		<form action="brad48.jsp" method="get">
 			<input type="text" name="account" /><br />
 			<input type="checkbox" name="hobby" value="1"/>
 			<input type="checkbox" name="hobby" value="2" />
