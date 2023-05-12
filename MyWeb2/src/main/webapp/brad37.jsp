@@ -17,7 +17,7 @@
 		<h1>Brad</h1>
 		<hr />
 		<jsp:include page="brad38.jsp">
-			<jsp:param value="100" name="x"/>
+			<jsp:param value='100' name="x"/>
 			<jsp:param value="200" name="y"/>
 		</jsp:include>
 		<hr />
