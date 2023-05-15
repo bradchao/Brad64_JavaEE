@@ -25,7 +25,7 @@ window.onload = function (){
 	
 	function connect(){
 		console.log("connecting...");
-		webSocket = new WebSocket("ws://localhost:8080/MyWeb2/myserver");
+		webSocket = new WebSocket("ws://10.0.104.190:8080/MyWeb2/myserver");
 		webSocket.onerror = function(event){
 			console.log("error");
 		};
@@ -39,6 +39,12 @@ window.onload = function (){
 			console.log("close");
 			start.style.display = "block";
 			mesgDiv.style.display = "none";
+		};
+		
+		webSocket.onmessage = function(event){
+			// event.data
+			var obj = JSON.parse(event.data);
+			log.innerHTML += obj.message + "<br />";
 		};
 		
 	}

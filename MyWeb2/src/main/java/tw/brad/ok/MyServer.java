@@ -25,17 +25,28 @@ public class MyServer {
 		System.out.println("onOpen()");
 		session.setMaxIdleTimeout(60*1000);
 		sessions.add(session);
+		System.out.println("Count:" + sessions.size());
 	}
 	
 	@OnMessage
 	public void onMessage(String message, Session session) {
 		System.out.println(message);
+		
+		for (Session user : sessions) {
+			try {
+				user.getBasicRemote().sendText(message);
+			}catch(Exception e) {
+				System.out.println(e);
+			}
+		}
+		
 	}
 	
 	@OnClose
 	public void onClose(Session session) {
 		System.out.println("onClose()");
 		sessions.remove(session);
+		System.out.println("Count:" + sessions.size());
 	}
 	
 	@OnError
