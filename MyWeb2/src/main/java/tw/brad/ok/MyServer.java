@@ -47,10 +47,10 @@ public class MyServer {
 			}
 		}
 		
-		try {
-			users.get("47").getBasicRemote().sendText(message);
-		}catch(Exception e) {
-		}
+//		try {
+//			users.get("47").getBasicRemote().sendText(message);
+//		}catch(Exception e) {
+//		}
 		
 		
 	}
