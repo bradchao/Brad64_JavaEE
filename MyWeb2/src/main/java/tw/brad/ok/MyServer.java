@@ -1,5 +1,6 @@
 package tw.brad.ok;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 import javax.websocket.OnClose;
@@ -12,19 +13,25 @@ import javax.websocket.server.ServerEndpoint;
 @ServerEndpoint("/myserver")
 public class MyServer {
 	private static HashSet<Session> sessions;
+	private static HashMap<String,Session> users;
 	
 	public MyServer() {
 		System.out.println("MyServer()");
 		if (sessions == null) {
 			sessions = new HashSet<>();
+			users = new HashMap<>();
 		}
 	}
 	
 	@OnOpen
 	public void onOpen(Session session) {
-		System.out.println("onOpen()");
+		System.out.println("onOpen():" + session.getId());
 		session.setMaxIdleTimeout(60*1000);
-		sessions.add(session);
+		if (sessions.add(session)) {
+			users.put(session.getId(), session);
+			
+		}
+		
 		System.out.println("Count:" + sessions.size());
 	}
 	
@@ -39,6 +46,12 @@ public class MyServer {
 				System.out.println(e);
 			}
 		}
+		
+		try {
+			users.get("47").getBasicRemote().sendText(message);
+		}catch(Exception e) {
+		}
+		
 		
 	}
 	
