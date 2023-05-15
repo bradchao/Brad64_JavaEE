@@ -12,6 +12,14 @@ window.onload = function (){
 		connect();
 	});
 	
+	send.addEventListener("click", function(){
+		console.log("send...");
+		var message = {
+			message : mesg.value
+		};
+		webSocket.send(JSON.stringify(message));
+	});
+	
 	start.style.display = "block";
 	mesgDiv.style.display = "none";
 	
@@ -23,7 +31,16 @@ window.onload = function (){
 		};
 		webSocket.onopen = function(event){
 			console.log("open");
+			start.style.display = "none";
+			mesgDiv.style.display = "block";
 		};
+		
+		webSocket.onclose = function(event){
+			console.log("close");
+			start.style.display = "block";
+			mesgDiv.style.display = "none";
+		};
+		
 	}
 	
 	
