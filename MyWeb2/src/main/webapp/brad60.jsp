@@ -34,6 +34,7 @@
 			<th>Account</th>
 			<th>Email</th>
 			<th>Delete</th>
+			<th>Edit</th>
 		</tr>
 		<script>
 			function delAlert(account){
@@ -52,6 +53,7 @@
 				<td>${row.email }</td>
 				<td><a href="?delid=${row.id }" 
 					onclick="return delAlert('${row.account }');">Del</a></td>
+				<td><a href="brad62.jsp?editid=${row.id }">Edit</a></td>
 			</tr>
 		</c:forEach>
 	</table>		
