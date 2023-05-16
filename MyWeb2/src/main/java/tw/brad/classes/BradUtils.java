@@ -57,7 +57,8 @@ public class BradUtils {
 	public static int nextPage(String page, String pages) {
 		int intPages = (int)Double.parseDouble(pages);
 		int intPage = Integer.parseInt(page);
-		return intPage >= intPages ? intPage : intPage + 1;
+		if (intPage < intPages) intPage++;
+		return intPage;
 	}
 	
 	

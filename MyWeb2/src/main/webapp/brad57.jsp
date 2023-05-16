@@ -36,6 +36,8 @@
 	<body>
 	<h1>美食特色小吃</h1>
 	<hr />
+	${Math.random() }
+	<hr />
 	總筆數: ${rs.rowCount } <br />
 	頁數: ${page } / ${pages } | 
 	<a href="?page=${prev }">上一頁</a> | <a href="?page=${next }">下一頁</a>
