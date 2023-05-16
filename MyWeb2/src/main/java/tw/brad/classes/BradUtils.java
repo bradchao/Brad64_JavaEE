@@ -61,5 +61,7 @@ public class BradUtils {
 		return intPage;
 	}
 	
-	
+	public static String encPasswd(String plain) {
+		return BCrypt.hashpw(plain, BCrypt.gensalt());
+	}
 }

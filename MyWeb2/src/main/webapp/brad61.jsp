@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="tw.brad.classes.*" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>    
 <!DOCTYPE html>
@@ -15,6 +16,14 @@
 			user="root"
 			password="root"
 			/>	
+			
+		<sql:update>
+			INSERT INTO member (account,passwd,email) VALUES (?,?,?)
+			<sql:param>${param.account }</sql:param>
+			<sql:param>${BCrypt.hashpw(param.passwd, BCrypt.gensalt()) }</sql:param>
+			<sql:param>${param.email }</sql:param>
+		</sql:update>
+		<c:redirect url="brad60.jsp"></c:redirect>
 	</c:if>
 	<head>
 		<meta charset="UTF-8">
