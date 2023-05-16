@@ -48,4 +48,17 @@ public class BradUtils {
 	public static String createScore() {
 		return (int)(Math.random()*101) + "";
 	}
+	
+	public static int prevPage(String page) {
+		int intPage = Integer.parseInt(page);
+		if (intPage > 1) intPage--;
+		return intPage;
+	}
+	public static int nextPage(String page, String pages) {
+		int intPages = (int)Double.parseDouble(pages);
+		int intPage = Integer.parseInt(page);
+		return intPage >= intPages ? intPage : intPage + 1;
+	}
+	
+	
 }
