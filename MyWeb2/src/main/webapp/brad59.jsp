@@ -49,7 +49,6 @@
 			<th>Town</th>
 			<th>Photo</th>
 		</tr>
-
 		<c:forEach items="${rs.rows }" var="gift">
 			<tr>
 				<td>${gift.id }</td>
