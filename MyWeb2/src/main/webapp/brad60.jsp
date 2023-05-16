@@ -10,6 +10,14 @@
 		user="root"
 		password="root"
 		/>
+	
+	<c:if test="${!empty param.delid }">
+		<sql:update>
+			DELETE FROM member WHERE id = ?
+			<sql:param>${param.delid }</sql:param>
+		</sql:update>
+	</c:if>
+	
 	<sql:query var="rs">
 		SELECT * FROM member
 	</sql:query>			
@@ -25,12 +33,25 @@
 			<th>#</th>
 			<th>Account</th>
 			<th>Email</th>
+			<th>Delete</th>
 		</tr>
+		<script>
+			function delAlert(account){
+				let isDel = confirm("是否刪除 *" + account + "* 嗎?");
+				//if (isDel){
+					// AJAX
+					// callback => refresh table
+				//}
+				return isDel;
+			}
+		</script>
 		<c:forEach items="${rs.rows }" var="row">
 			<tr>
 				<td>${row.id }</td>
 				<td>${row.account }</td>
 				<td>${row.email }</td>
+				<td><a href="?delid=${row.id }" 
+					onclick="return delAlert('${row.account }');">Del</a></td>
 			</tr>
 		</c:forEach>
 	</table>		
