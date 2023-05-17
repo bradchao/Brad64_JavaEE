@@ -1,0 +1,30 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+	function test2(){
+		$.get("brad70.jsp?id=" + $('#id').val(), 
+				function(data,status){
+					if (status == 'success'){
+						let jsonObj = JSON.parse(data.trim());
+						
+						$("#name").html(jsonObj.name);
+						$("#city").html(jsonObj.city);
+						$("#town").html(jsonObj.town);
+					}
+				});
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Brad Big Company</title>
+	</head>
+	<body>
+		<input type="number" id="id" /><br />
+		<button onclick="test2()">Test2</button><br />
+		<hr />
+		Name: <span id="name"></span><br />
+		City: <span id="town"></span><br />
+		Town: <span id="city"></span><br />
+	</body>
+</html>
