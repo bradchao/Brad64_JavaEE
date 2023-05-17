@@ -31,6 +31,18 @@
 			function checkAccount(){
 				$('#mesg').load('brad72.jsp?account=' + $('#account').val());
 			}
+			function add(){
+				$.post("brad73.jsp",{
+					"account" : $('#account').val(),
+					"passwd" : $('#passwd').val(),
+					"email" : $('#email').val(),
+				},function(data,status){
+					if (status == 'success'){
+						console.log("success!");	
+						location.href = 'brad60.jsp';
+					}
+				});
+			}
 		</script>
 		<meta charset="UTF-8">
 		<title>Brad Big Company</title>
@@ -51,10 +63,13 @@
 			</tr>
 			<tr>
 				<th>Email</th>
-				<td><input name="email" /></td>
+				<td><input name="email" id="email" /></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" value="Add" /></td>
+				<td colspan="2" align="center">
+					<input type="submit" value="Add" />
+					<input type="button" value="AJAX Add" onclick="add()"/>
+				</td>
 			</tr>
 		</table>
 	</form>
