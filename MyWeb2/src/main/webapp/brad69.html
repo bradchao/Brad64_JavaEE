@@ -1,0 +1,38 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+	function test1(){
+		$('#id1').load("brad67.jsp?max=" + $('#max').val());
+	}
+	function test2(){
+		$.get("brad67.jsp?max=" + $('#max').val(), 
+				function(data,status){
+					if (status == 'success'){
+						$("#id1").html(data);
+					}
+				});
+	}
+	function test3(){
+		$.post("brad68.jsp", {
+			"max" : $('#max').val()
+		}, function(data, status){
+			if (status == 'success'){
+				$("#id1").html(data);
+			}			
+		});
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Brad Big Company</title>
+	</head>
+	<body>
+		<input type="number" id="max" /><br />
+		<button onclick="test1()">Test1</button><br />
+		<button onclick="test2()">Test2</button><br />
+		<button onclick="test3()">Test3</button><br />
+		<hr />
+		<div id="id1"></div>
+	</body>
+</html>

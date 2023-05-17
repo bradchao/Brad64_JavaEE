@@ -11,9 +11,18 @@
 	
 	function getTask(){
 		var max = document.getElementById("max").value;
-		xhttp.open("GET", "brad67.jsp?max=" + max, true);
+		xhttp.open("GET", "brad68.jsp?max=" + max, true);
 		xhttp.send();
 	}
+	
+	function postTask(){
+		var max = document.getElementById("max").value;
+		xhttp.open("POST", "brad68.jsp", true);
+		xhttp.setRequestHeader("Content-type", 
+			"application/x-www-form-urlencoded");
+		xhttp.send("max=" + max);
+	}
+	
 	doTask();
 </script>
 <!DOCTYPE html>
