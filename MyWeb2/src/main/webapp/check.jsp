@@ -1,3 +1,4 @@
+<%@page import="tw.brad.classes.Member"%>
 <%@page import="tw.brad.classes.BCrypt"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -20,13 +21,19 @@
 		String hashed = rs.getString("passwd");
 		if (BCrypt.checkpw(passwd, hashed)){
 			// ok
+			Member member = new Member();
+			member.setAccount(rs.getString("account"));
+			member.setEmail(rs.getString("email"));
+			session.setAttribute("member", member);
 			response.sendRedirect("brad60.jsp");
 		}else{
 			// xxxx
+			session.invalidate();
 			response.sendRedirect("login.jsp");
 		}
 	}else{
 		// xxx
+		session.invalidate();
 		response.sendRedirect("login.jsp");
 	}
 	
