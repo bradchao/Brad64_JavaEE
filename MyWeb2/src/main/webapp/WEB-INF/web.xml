@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+	<request-charset-encoding>UTF-8</request-charset-encoding>
+	
+	<servlet>
+		<servlet-name>Brad01</servlet-name>
+		<servlet-class>tw.brad.ok.Brad01</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Brad01</servlet-name>
+		<url-pattern>/Brad01</url-pattern>
+	</servlet>
+	
+</web-app>

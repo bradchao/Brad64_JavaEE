@@ -25,6 +25,7 @@
 			member.setAccount(rs.getString("account"));
 			member.setEmail(rs.getString("email"));
 			session.setAttribute("member", member);
+			session.setMaxInactiveInterval(180);
 			response.sendRedirect("brad60.jsp");
 		}else{
 			// xxxx

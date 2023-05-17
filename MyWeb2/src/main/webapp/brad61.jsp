@@ -59,7 +59,7 @@
 			</tr>
 			<tr>
 				<th>Password</th>
-				<td><input type="password" name="passwd" /></td>
+				<td><input type="password" id="passwd" name="passwd" /></td>
 			</tr>
 			<tr>
 				<th>Email</th>
