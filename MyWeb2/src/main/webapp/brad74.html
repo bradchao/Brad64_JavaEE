@@ -1,0 +1,32 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+	function load(){
+		$.ajax({
+			url : "brad75.jsp",
+			type : "get",
+			success : doSuccess,
+			error : doError
+		});
+	}
+	
+	function doSuccess(json){
+		
+	}
+	
+	function doError(){
+		
+	}
+	
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Brad Big Company</title>
+	</head>
+	<body>
+		<input type="button" value="Load" onclick="load()" />
+		<hr />
+		<table border="1" width="100%" id="table"></table>
+	</body>
+</html>
