@@ -34,7 +34,7 @@
 	</head>
 	<body>
 		Welcom, ${member.account } | ${member.email }<br />
-		<a href="brad61.jsp">New</a>
+		<a href="brad61.jsp">New</a> | <a href="logout.jsp">Logout</a>
 		<hr />
 	<table border="1" width="100%">
 		<tr>
