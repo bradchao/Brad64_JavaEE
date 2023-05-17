@@ -6,7 +6,7 @@
 					if (status == 'success'){
 						let jsonObj = JSON.parse(data.trim());
 						
-						$("#name").html(jsonObj.name);
+						$("#name").html(jsonObj['gift-name']);
 						$("#city").html(jsonObj.city);
 						$("#town").html(jsonObj.town);
 					}

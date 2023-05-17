@@ -26,6 +26,12 @@
 		<c:redirect url="brad60.jsp"></c:redirect>
 	</c:if>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>		
+		<script type="text/javascript">
+			function checkAccount(){
+				$('#mesg').load('brad72.jsp?account=' + $('#account').val());
+			}
+		</script>
 		<meta charset="UTF-8">
 		<title>Brad Big Company</title>
 	</head>
@@ -36,7 +42,8 @@
 		<table border="1">
 			<tr>
 				<th>Account</th>
-				<td><input name="account" /></td>
+				<td><input name="account" id="account" onblur="checkAccount()" />
+				<span id='mesg'></span></td>
 			</tr>
 			<tr>
 				<th>Password</th>

@@ -12,7 +12,7 @@
 	SELECT * FROM gift WHERE id = ?
 	<sql:param>${param.id }</sql:param>
 </sql:query>
-{ "name" : "${rs.rows[0].name }",
+{ "gift-name" : "${rs.rows[0].name }",
 	"city" : "${rs.rows[0].city }",
 	"town" : "${rs.rows[0].town }"
 }
