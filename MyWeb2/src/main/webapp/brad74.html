@@ -1,22 +1,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript">
-	function load(){
+	var page = 1;
+	function load(p){
 		$.ajax({
-			url : "brad75.jsp",
+			url : "brad75.jsp?page=" + p,
 			type : "get",
 			success : doSuccess,
 			error : doError
 		});
 	}
+	function prev(){
+		load(--page);
+	}
+	function next(){
+		load(++page);
+	}
 	
 	function doSuccess(json){
+		var jsonObj = $.parseJSON(json.trim());
+		page = jsonObj.page;
 		
+		$('#page').html(page);
+		if (jsonObj.error != 0) return;
+		
+		$('#table').empty();
+		$(jsonObj.data).each(function(i,row){
+			$("#table").append(
+				'<tr>' + 
+				'<td>' + i + '</td>' +
+				'<td>' + row.name + '</td>' +
+				'<td>' + row.tel + '</td>' +
+				'</tr>'
+			);
+		});
 	}
 	
 	function doError(){
-		
+		console.log("error")
 	}
-	
+	$('#page').html(page);
 </script>
 <!DOCTYPE html>
 <html>
@@ -25,8 +47,11 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
-		<input type="button" value="Load" onclick="load()" />
+		<input type="button" value="Load" onclick="load(1)" />
+		<input type="button" value="Prev" onclick="prev()" />
+		<input type="button" value="Next" onclick="next()" />
 		<hr />
+		Page: <span id="page"></span><br />
 		<table border="1" width="100%" id="table"></table>
 	</body>
 </html>

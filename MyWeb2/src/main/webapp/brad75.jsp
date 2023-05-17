@@ -50,7 +50,7 @@
 	obj.put("error", 0);
 	
 	JSONArray ary = new JSONArray();
-	for (int i=0; i<3; i++){
+	for (int i=0; i<10; i++){
 		JSONObject row = new JSONObject();
 		row.put("name", "Brad:" + (int)(Math.random()*100));
 		row.put("tel", "Tel:" + (int)(Math.random()*100));
