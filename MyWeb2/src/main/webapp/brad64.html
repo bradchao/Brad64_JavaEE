@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	const xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		console.log("OK1:" + xhttp.readyState);
+		if (xhttp.readyState == 4){
+			console.log("OK2:" + xhttp.status);
+			if (xhttp.status == 200){
+				document.getElementById("test2").innerHTML =
+					xhttp.responseText;
+			}
+		}
+	}
+	
+	xhttp.onload = callback; 
+		
+	function callback(){
+		var here = document.getElementById("here");
+		here.innerHTML = xhttp.responseText;
+	}
+	
+	function test1(){
+		console.log("test1()");
+		xhttp.open("GET", "brad65.jsp", true);
+		xhttp.send();
+	}
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Brad Big Company</title>
+	</head>
+	<body>
+		<input type="button" value="test1" onclick="test1()" /><hr />
+		<div id="here"></div><hr />
+		<div id="test2"></div>
+	</body>
+</html>
